@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset   ="utf-8"                                                                               >
+    <meta http-equiv="X-UA-Compatible"            content="IE=edge"                                               >
+    <meta name      ="viewport"                   content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta name      ="description"                content="Control Neo4j"                                   >
+    <link rel       ="shortcut icon"              href   ="/img/favicon.png"                                          >
+
+    <title>Control Neo4j</title>
+
+    <link href      ="/css/font-awesome.min.css"  rel    ="stylesheet">           
+    <link href      ="/css/simple-line-icons.css" rel    ="stylesheet">
+    <link href      ="/css/style.css"             rel    ="stylesheet">           
+	<link href      ="/css/custom.css"            rel    ="stylesheet">           
+</head>
+
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden _sidebar-mobile-show">
+    <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+    <div class="app-body">
+
+      <div class="sidebar">
+    <nav class="sidebar-nav">
+            <ul class="nav">
+                <li >
+                    <a class="nav-link" href="/">
+                        <i class="icon-home"></i>Home</a>
+                </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-query/">
+                                Cypher Query</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cypher-table/">
+                                Cypher Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/cypher-query_soti/">
+                                Test Soti</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/view-jira-data/">
+                                View Jira Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/jira/">
+                                Jira data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/control-neo4j/">
+                                Control Neo4j</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/tests/">
+                                Dev Tests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/neovis/">
+                                NeoVis examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/repl/">
+                                REPL examples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/examples/visjs/">
+                                VisJs Examples</a>
+                        </li>
+            </ul>
+
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+
+
+
+
+
+      <main class="main">
+        <div class="container-fluid">
+
+          
+
+    
+    <style>
+        #action-target {
+            width     : 100%;
+            height    : 500px;
+            background: white;
+        }
+    </style>
+
+    <base target="action-target">
+
+    <h1>Control Neo4j</h1>
+
+    <div class="row" id="neo4j-actions">
+        <div class="col-6">
+            
+
+<p>Multiple queries for the api (make sure you are on http;//localhost:3000)</p>
+
+<h4 id="neo4j-queries">Neo4J queries</h4>
+
+<ul>
+<li><a href="/api/neo4j/cypher?pretty&amp;query=match+(n)+return+n">match (n) return n</a></li>
+<li><a href="/api/neo4j/cypher?pretty&amp;query=match (n:Movie) return n">match (n:Movie) return n</a></li>
+<li><a href="/api/neo4j/create/ABCAAA?a=123">create node</a></li>
+<li><a href="/api/neo4j/nodes/create/GDPR-223?pretty">create nodes for issue</a> (GDPR-223)</li>
+<li><a href="/api/neo4j/nodes/create/RISK-1092?pretty">create nodes for issue</a> (RISK-1092)</li>
+<li><a href="/api/neo4j/nodes/create-regex/GDPR-22?pretty">create nodes using regex</a> (GDPR-22)</li>
+</ul>
+
+<h4 id="data-setup">Data setup</h4>
+
+<ul>
+<li><a href="/api/neo4j/delete/all?pretty">delete all nodes</a></li>
+<li><a href="/api/neo4j/nodes/create-regex/GDPR-?pretty">create all GDPR</a></li>
+<li><a href="/api/neo4j/nodes/create-regex/RISK-?pretty">create all RISK</a></li>
+</ul>
+
+<h4 id="jira-data">Jira data</h4>
+
+<ul>
+<li><a href="/api/jira/issues/ids">all ids</a></li>
+<li><a href="/api/jira/issues/files">id:files</a></li>
+<li><a href="/api/jira/issue/RISK-1?pretty">RISK-1</a></li>
+<li><a href="/api/jira/fields/schema">Fields Schema</a></li>
+</ul>
+
+        </div>
+        <div class="col-6">
+            <iframe name="action-target"
+                    id="action-target"></iframe>
+        </div>
+    </div>
+    <hr>
+    <a href="/" target="_self">Go to Home</a> (break IFrame target)
+
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+    <span><a href="pbx-group-security.com">Photobox Group Security</a>, 2018</span>
+    <span class="ml-auto">Using Hugo theme <a href="http://coreui.io">CoreUI</a></span>
+</footer>
+    <script src="/js/jquery.min.js"     ></script>          
+<script src="/js/popper.min.js"     ></script>
+<script src="/js/bootstrap.min.js"  ></script>
+<script src="/js/pace.min.js"       ></script>
+<script src="/js/app.js"            ></script>          
+
+
+  </body>
+</html>
